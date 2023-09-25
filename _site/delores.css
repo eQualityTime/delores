@@ -1,0 +1,59 @@
+body {
+  margin: 40px;
+  padding-bottom: 50px;
+  font-family: "YourFontFamily", Arial, sans-serif;
+
+}
+
+#plan {
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+   min-height: 300px; /* Adjust the value as per your requirement */
+  padding: 100px;
+}
+ 
+
+.lpad {
+   padding-left: 4ch; /* Adjust the value as needed */
+}
+
+
+/* CSS class for the yellow background */
+.highlight {
+  background-color: yellow;
+  list-style-type:  '@' ;
+}
+
+
+/* CSS class for completed todo list item */
+.done {
+  text-decoration: line-through; /* Add a line through the text */
+  color: #888; /* Change the text color to a muted gray */
+  font-style: italic; /* Italicize the text to indicate completion */
+  /* You can also add additional styles like changing opacity, adding a checkmark icon, etc. based on your design preferences */
+}
+
+
+
+
+/* CSS for the 'method' div */
+#method {
+  width: 60%; /* To keep 20% borders on both sides, set the div width to 60% */
+  margin: 0 auto; /* Center the div on the page */
+  padding: 20px; /* Add some padding inside the div */
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Adjust line-height for better readability */
+}
+
+/* Elegant bulleted list style */
+#method ul {
+  list-style-type: disc; /* Use 'disc' for default bullet points */
+}
+
+/* Add some spacing between list items */
+#method li {
+  margin-bottom: 8px;
+}
+

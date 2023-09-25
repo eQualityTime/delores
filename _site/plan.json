@@ -1,0 +1,33 @@
+{
+  "Main": [
+    "You are an intrepid adventurer, and tales of the lost amulet of Alzura have reached your ears.",
+    "This mystical artifact is said to grant unimaginable power.",
+    "The journey is treacherous, and the choices you make will determine your fate.*",
+    "You stand at a crossroads:",
+    "To your left, a dense forest with towering trees that hide the sky.",
+    "To your right, a steep mountain path that seems to touch the clouds.",
+    "Straight ahead lies a dark cavern with a chilling wind blowing from within.",
+    "[Explore the cavern](#the cavern), [Enter the forest](#the forest),  [Climb the mountain](#the mountain)"
+  ],
+  "The Forest": [
+    "As you venture deeper into the forest, you come across an enchanted clearing. In the center stands a shimmering pool. As you approach, you notice two choices:",
+    "You realise you can drink from the pool and potentially gain the knowledge of the forest or avoid the pool, fearing a trap, and continue your search for the amulet.",
+    "[Drink](#the knowledge) or  [Continue on](#the trap)"
+  ],
+  "The Mountain": [
+    "The climb is strenuous, but you press on. Near the summit, you discover a nest with a large, magnificent egg.",
+    "[Take the egg](#the trap) or  [Continue on](#the knowledge)"
+  ],
+  "The Cavern": [
+    "The cavern is dark and echoing. A soft glow in the distance reveals a split in the path.",
+    "[Left path](#the trap) or [Right path](#the knowledge)"
+  ],
+  "The Knowledge": [
+    "You come across an ancient pedestal with the Amulet of Alzura resting atop. As you reach out to take it, the air around you vibrates with energy. The amulet is yours!",
+    "*Congratulations, adventurer! You have obtained the Amulet of Alzura.*"
+  ],
+  "The Trap": [
+    "Suddenly, the ground gives way beneath you! You fall into a pit filled with spikes. The last thing you remember is the glint of the amulet somewhere far above...",
+    "*Alas, adventurer. The journey has come to an untimely end.*"
+  ]
+}

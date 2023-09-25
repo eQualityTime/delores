@@ -1,0 +1,26 @@
+{
+  "Main":[
+  "one",
+  "two"
+  ],
+
+  "Make Toast": [
+    "Open Fridge",
+    "Get butter",
+    "Close Fridge",
+    "Get bread",
+    "Get Knife",
+    "Put toast on grill",
+    "A - Wait for 60 seconds",
+    "Q: does the toast need more time?",
+    "Goto A",
+    "Butter bread"
+  ],
+  "Solve Global warming": [
+    "Take over the world",
+    "Take a minute to look at stuff",
+    "Cancel daylight savings",
+    "Have a two week infection break every Autumn.",
+    "Move family celebrations to the summer."
+  ]
+}

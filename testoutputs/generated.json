@@ -1,0 +1,14 @@
+{
+    "Make Toast": [
+        "Open Fridge",
+        "Get butter ",
+        "Close Fridge",
+        "Get bread ",
+        "Get Knife ",
+        "Put toast on grill ",
+        "A - Wait for 60 seconds",
+        "Q: does the toast need more time?",
+        "Goto A",
+        "Butter bread"
+    ]
+}
