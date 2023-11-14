@@ -43,7 +43,7 @@ body {
   width: 60%; /* To keep 20% borders on both sides, set the div width to 60% */
   margin: 0 auto; /* Center the div on the page */
   padding: 20px; /* Add some padding inside the div */
-  font-size: 16px; /* Adjust the font size as needed */
+  font-size: 28px;
   line-height: 1.5; /* Adjust line-height for better readability */
 }
 
