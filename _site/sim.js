@@ -256,9 +256,10 @@ navigateChoice(right) {
 
 
 
-    get_method_as_html(name){
+    get_method_as_html(name, recusion=false){
+      //We are going to return a html display of the instructions in the module
       const instructions = this.get_method(name);
-      let html = '<ul>';
+      let html = '<ul>';//start the list
       for (let i = 0; i < instructions.length; i++) {
         const instruction = marked.parseInline(instructions[i].replaceAll("(","(<").replaceAll(")",">)"));
         console.log(instruction)
@@ -364,6 +365,9 @@ function main_window_wrapper(plan) {
         displayAndUpdatePlan(() => plan.take_jump());
         break;
       case 'Q':
+        displayAndUpdatePlan(() => plan.interrupt_menu());
+        break;
+      case 'q':
         displayAndUpdatePlan(() => plan.interrupt_menu());
         break;
       case 'X':
