@@ -68,6 +68,7 @@ The following keyboard keys are recognised for DELORES: TODO
 * 'Y' marks the currently highlighted task as completed and moves the cursor to the next task. 
 * 'X' wipes the cookies and returns the algorithm to it's initial state
 * 'Q' Opens the 'interrupt menu'. the interrupt menu is one can can be triggered from any stage in the algorithm and is where you would put literal interrupts to the algorithm: phone calls, alarms, missing resources. 
+* 'J' Opens the 'jump' menu that will take you to any subroutine you like 
 
 
 # Writing your own algorithms 

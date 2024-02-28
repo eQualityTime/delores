@@ -6,8 +6,19 @@ instruction_index;
 callstack; 
 jump_choice_number;
 
+  add_jump_method(symbol_table_dic){
+    let jump_list=[]
+    for (var key in symbol_table_dic) {
+        console.log(key)
+        jump_list.push("["+key+"](#"+key+")") 
+    }
+    console.log(jump_list)
+    symbol_table_dic['jump_menu']=jump_list
+  }
+
   constructor(symbol_table_dic) {
     symbol_table_dic=this.makeKeysLowercase(symbol_table_dic)
+    this.add_jump_method(symbol_table_dic);
     this.symbol_table_dic = symbol_table_dic;
     this.current_method_name="main";
     if (!this.get_method("main")){
@@ -17,6 +28,8 @@ jump_choice_number;
     this.instruction_index=0;
     this.callstack=[] 
   }
+
+
 
   load(){
     this.execution_log = this.retrieveExecutionLogFromCookie() || {};
@@ -38,8 +51,13 @@ jump_choice_number;
     return lowercaseObj;
   }
 
+
   interrupt_menu(){
   this.jump_to_method("interrupt") //Not sure this should be hardcoded but...
+  }
+
+  jump_menu(){
+  this.jump_to_method("jump_menu") //Not sure this should be hardcoded but...
   }
 
   get_instruction(method, number){
@@ -63,6 +81,7 @@ jump_choice_number;
   get current_instruction() {
     //TODO fix that the index is sometimes too big. 
     if (this.get_method(this.current_method_name)){
+      console.log(this.symbol_table_dic[this.current_method_name])
       return this.symbol_table_dic[this.current_method_name][this.instruction_index].trim()
     } else {
       console.log("Current Instruction was asked for the instruction from an unknown method:"+this.current_method_name)
@@ -83,7 +102,6 @@ jump_choice_number;
   set current_method_name(name){
       this.xxf_current_method_name=name.toLowerCase()
   }
-
 
   jump_to_method(method_name) { //Don't use the hashtag here 
     if (this.get_method(method_name)){
@@ -346,6 +364,10 @@ function main_window_wrapper(plan) {
   display_single_method(plan);
   document.addEventListener('keydown', (event) => {
     switch (event.key) {
+      case 'j':
+        console.log("Pressed J");
+        displayAndUpdatePlan(() => plan.jump_menu());
+        break;
       case 'ArrowDown':
         displayAndUpdatePlan(() => plan.next());
         break;

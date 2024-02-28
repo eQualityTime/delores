@@ -32,6 +32,14 @@ class TestMarkdownConversion(unittest.TestCase):
 
         self.assertEqual(True,compare_files('testinputs/1b.md','testoutputs/1.md'))
 
+    def test_find_bug(self):
+        with open('testinputs/main.md', 'r') as f:
+            markdown_text = f.read()
+            internal_structure= compiler.markdown_to_internal_structure(markdown_text)
+            print(internal_structure['Process Inbox'])
+
+        
+
 
 def compare_files(file1, file2):
     comparison = filecmp.cmp(file1, file2)
