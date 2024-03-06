@@ -2,3 +2,4 @@ testoutputs/*
 *.pyc
 *tags
 node_modules/*
+_site/plan.json

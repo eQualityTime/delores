@@ -400,8 +400,10 @@ function main_window_wrapper(plan) {
 }
 
 function display_one_instruction(plan){
+    //also changes the title which is probably NOT ideal. 
     const planDiv = document.getElementById('plan');
     planDiv.innerHTML = plan.current_instruction_html;
+    document.title="Delores: "+ plan.current_instruction_html;
 } 
 
 function display_single_method(plan) {
