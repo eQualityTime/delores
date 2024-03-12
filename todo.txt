@@ -1,0 +1,6 @@
+
+* Delores improvements
+  * The counter should be included in the cookies
+  * The interface between inbox.md and delores needs to be much much clearer. 
+  * How to I get to the indivdiaul task algoritms 
+  * Jump menu 
