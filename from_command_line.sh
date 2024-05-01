@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This is a relic of me trying to get delores to work from keyboard shortcuts
+# This is a relic of me trying to get delores to work from keyboard shortcuts
 
 # Check if xdotool is installed
 if ! command -v xdotool &> /dev/null; then
@@ -8,31 +8,36 @@ if ! command -v xdotool &> /dev/null; then
     exit 1
 fi
 
-echo "X$DISPLAY"
 # Check if the argument is provided
 if [ $# -eq 0 ]; then
     echo "Usage: $0 <letter>"
     exit 1
 fi
 
-# Define the letter argument
-letter="$1"
+letter="$1"  # Define the letter argument
+# Cache the Firefox window ID in a temporary file to avoid searching repeatedly
+window_id_file="/tmp/firefox_window_id.txt"
 
-# Find the Firefox window with a title containing 'Plan page'
-firefox_window_id=$(xdotool search --name "Plan page")
+if [ ! -f "$window_id_file" ] || ! xdotool windowactivate "$(cat $window_id_file)" 2>/dev/null; then
+    # Find the Firefox window with a title containing 'Delores:'
+    firefox_window_id=$(xdotool search --name "Delores:")
 
-# Check if the Firefox window was found
-if [ -z "$firefox_window_id" ]; then
-    echo "Error: Firefox window with title 'Plan page' NOT found."
-    exit 1
+    if [ -z "$firefox_window_id" ]; then
+        echo "Error: Firefox window with title 'Delores:' NOT found."
+        exit 1
+    fi
+
+    echo "$firefox_window_id" > "$window_id_file"
+else
+    firefox_window_id=$(cat "$window_id_file")
 fi
 
 # Activate the Firefox window
 xdotool windowactivate "$firefox_window_id"
-sleep 0.5
-# Send the letter argument to the Firefox window
-xdotool type "$letter"
 
-echo "Sent letter '$letter' to Firefox window with title 'Plan page'"
-echo "Sent letter '$letter' to Firefox window with title 'Plan page'" >> /home/joe/log.txt
+# Send the letter argument to the Firefox window
+xdotool type --delay 0 "$letter"
+
+# Log the action
+echo "Sent letter '$letter' to Firefox window with title 'Delores:'" | tee -a /home/joe/log.txt
 
