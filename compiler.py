@@ -3,6 +3,9 @@ import sys
 import re
 
 def markdown_to_internal_structure(markdown_string):
+    # Remove HTML-style comments
+    markdown_string = re.sub(r'<!--.*?-->', '', markdown_string, flags=re.DOTALL)
+
     sections = re.findall(r'^# (.+)', markdown_string, re.MULTILINE)
     result = {}
     for i, section in enumerate(sections):
@@ -15,6 +18,7 @@ def markdown_to_internal_structure(markdown_string):
         result[section.strip()] = statements
 
     return result
+
 
 def internal_structure_to_markdown(structure):
     result = ""
