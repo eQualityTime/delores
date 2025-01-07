@@ -396,6 +396,26 @@ function main_window_wrapper(plan) {
         displayAndUpdatePlan(() => plan.reset_counts());
         break;
     }
+    document.addEventListener("click", function(event) {
+        // Check if the clicked element is a link
+        console.log("There was a click") 
+        if (event.target.tagName === 'A') {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Get the target method name from the link's href
+            const href = event.target.getAttribute("href");
+            const methodName = href.startsWith("#") ? href.substring(1).toLowerCase().replace(/%20/g, " ") : null;
+
+            // Use `take_jump` if there’s a valid method name
+            if (methodName && plan) {
+                plan.jump_to_method(methodName); // Replace with `take_jump()` if needed
+                display_one_instruction(plan);
+                display_single_method(plan);
+            }
+        }
+    });
+
+
   });
 }
 
